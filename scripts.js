@@ -187,7 +187,7 @@ $.getJSON("http://softwarehuttest.x10.mx/public/user/listunpaidbills/",function(
 
 
 //Budget
-$.getJSON( "http://kastleapps.com/test2.html", function( data ) {
+$.getJSON( "http://softwarehuttest.x10.mx/public/user/balance/", function( data ) {
     var wrap = '<div data-role="page">' +
                '<p>Bank: ' + data.bank + '</p>' +
                '<p>Cash: ' + data.cash + '</p>' +
