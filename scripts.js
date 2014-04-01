@@ -185,7 +185,7 @@ $.getJSON("http://softwarehuttest.x10.mx/public/user/listunpaidbills/",function(
     })//end of unpaid bills page update
 ////////////////////////////////////////////////////////////////////////////////
 //Budget
-$.getJSON("http://softwarehuttest.x10.mx/public/user/balance/",function(data){
+$.getJSON("http://softwarehuttest.x10.mx/public/user/listunpaidbills/",function(data){
         //Loop for each element on the data
         $.each(data,function(elem){
             var wrap = $("<div/>").attr('data-role', 'collapsible');
