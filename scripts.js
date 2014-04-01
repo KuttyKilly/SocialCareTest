@@ -184,39 +184,27 @@ $.getJSON("http://softwarehuttest.x10.mx/public/user/listunpaidbills/",function(
         $( "#unpaidList" ).collapsibleset( "refresh" );
     })//end of unpaid bills page update
 ////////////////////////////////////////////////////////////////////////////////
-
-
 //Budget
-/*
-$.getJSON( "http://softwarehuttest.x10.mx/public/user/balance/", function( data ) {
-    var wrap = '<div data-role="page">' +
-               '<p>Bank: ' + data.bank + '</p>' +
-               '<p>Cash: ' + data.cash + '</p>' +
-               '<p>Daily Budget: ' + data.daily_aim + '</p>' +
-               '<p>Todays Expense: ' + data.spent_today + '</p>' +
-               '</div>';
-
-    $('#budgetList').html(wrap); 
-});
-*/
-
-$.getJSON("http://softwarehuttest.x10.mx/public/user/listunpaidbills/",function(data){
+$.getJSON("http://softwarehuttest.x10.mx/public/user/balance/",function(data){
         //Loop for each element on the data
         $.each(data,function(elem){
             var wrap = $("<div/>").attr('data-role', 'collapsible');
             //Create the h1 and the other elements appending them to bills List
             $("<h1/>",{
-                text:data[elem].reference
+                text:"Budget Details"
             }).appendTo(wrap);   
             $("<p/>",{
-                text:"Account: "+ data[elem].account
+                text:"Bank: "+ data[elem].bank
             }).appendTo(wrap);        
-            $("<p/>",{
-                text:"Amount: "+ data[elem].amount
-            }).appendTo(wrap);
             wrap.appendTo('#budgetList');    
         })//end of for each loop
         $( "#budgetList" ).collapsibleset( "refresh" );
+
+
+
+
+
+    })//end of unpaid bills page update
 
 
 //back button for all pages less home
