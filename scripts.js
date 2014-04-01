@@ -194,20 +194,20 @@ $.getJSON("http://softwarehuttest.x10.mx/public/user/listunpaidbills/",function(
                 text:"Budget Details"
             }).appendTo(wrap);   
             $("<p/>",{
-                text:"Bank Balance: '\u00A3'"+ data.bank
+                text:"Bank Balance: \u00A3"+ data.bank
             }).appendTo(wrap);   
             $("<p/>",{
-                text:"Cash Balance: '\u00A3'"+ data.cash
+                text:"Cash Balance: \u00A3"+ data.cash
             }).appendTo(wrap);     
             $("<p/>",{
-                text:"Today's Budget: '\u00A3'"+ data.daily_aim
+                text:"Daily Budget: \u00A3"+ data.daily_aim
             }).appendTo(wrap);    
             $("<p/>",{
-                text:"Today's Expense: '\u00A3'"+ data.spent_today
+                text:"Daily Expense: \u00A3"+ data.spent_today
             }).appendTo(wrap);  
             wrap.appendTo('#budgetList');    
         $( "#budgetList" ).collapsibleset( "refresh" );
-    })//end of unpaid bills page update
+    })//end of budget page update
 
 
 //back button for all pages less home
