@@ -187,19 +187,19 @@ $.getJSON("http://softwarehuttest.x10.mx/public/user/listunpaidbills/",function(
 
 
 //Budget
-$.getJSON("http://softwarehuttest.x10.mx/public/user/balance/",function(data){
+$.getJSON("http://softwarehuttest.x10.mx/public/user/listunpaidbills/",function(data){
         //Loop for each element on the data
-        $.each(data,function(elem){
+        //$.each(data,function(elem){
             var wrap = $("<div/>").attr('data-role', 'collapsible');
             //Create the h1 and the other elements appending them to bills List
             $("<h1/>",{
                 text:"Budget Details"
             }).appendTo(wrap);   
             $("<p/>",{
-                text:"Bank: "+ data[elem].bank
+                text:"Bank: "+ data.bank
             }).appendTo(wrap);        
             wrap.appendTo('#budgetList');    
-        })//end of for each loop
+        //})//end of for each loop
         $( "#budgetList" ).collapsibleset( "refresh" );
     })//end of unpaid bills page update
 
