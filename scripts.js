@@ -188,18 +188,24 @@ $.getJSON("http://softwarehuttest.x10.mx/public/user/listunpaidbills/",function(
 
 //Budget
 $.getJSON("http://softwarehuttest.x10.mx/public/user/listunpaidbills/",function(data){
-        //Loop for each element on the data
-        //$.each(data,function(elem){
             var wrap = $("<div/>").attr('data-role', 'collapsible');
             //Create the h1 and the other elements appending them to bills List
             $("<h1/>",{
                 text:"Budget Details"
             }).appendTo(wrap);   
             $("<p/>",{
-                text:"Bank: "+ data.bank
-            }).appendTo(wrap);        
+                text:"Bank Balance: '\u00A3'"+ data.bank
+            }).appendTo(wrap);   
+            $("<p/>",{
+                text:"Cash Balance: '\u00A3'"+ data.cash
+            }).appendTo(wrap);     
+            $("<p/>",{
+                text:"Today's Budget: '\u00A3'"+ data.daily_aim
+            }).appendTo(wrap);    
+            $("<p/>",{
+                text:"Today's Expense: '\u00A3'"+ data.spent_today
+            }).appendTo(wrap);  
             wrap.appendTo('#budgetList');    
-        //})//end of for each loop
         $( "#budgetList" ).collapsibleset( "refresh" );
     })//end of unpaid bills page update
 
