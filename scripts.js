@@ -187,6 +187,7 @@ $.getJSON("http://softwarehuttest.x10.mx/public/user/listunpaidbills/",function(
 
 
 //Budget
+/*
 $.getJSON( "http://softwarehuttest.x10.mx/public/user/balance/", function( data ) {
     var wrap = '<div data-role="page">' +
                '<p>Bank: ' + data.bank + '</p>' +
@@ -197,6 +198,26 @@ $.getJSON( "http://softwarehuttest.x10.mx/public/user/balance/", function( data 
 
     $('#budgetList').html(wrap); 
 });
+*/
+
+$.getJSON("http://softwarehuttest.x10.mx/public/user/listunpaidbills/",function(data){
+        //Loop for each element on the data
+        $.each(data,function(elem){
+            var wrap = $("<div/>").attr('data-role', 'collapsible');
+            //Create the h1 and the other elements appending them to bills List
+            $("<h1/>",{
+                text:data[elem].reference
+            }).appendTo(wrap);   
+            $("<p/>",{
+                text:"Account: "+ data[elem].account
+            }).appendTo(wrap);        
+            $("<p/>",{
+                text:"Amount: "+ data[elem].amount
+            }).appendTo(wrap);
+            wrap.appendTo('#budgetList');    
+        })//end of for each loop
+        $( "#budgetList" ).collapsibleset( "refresh" );
+
 
 //back button for all pages less home
 $.mobile.page.prototype.options.addBackBtn = "true"; 
