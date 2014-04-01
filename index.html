@@ -13,7 +13,31 @@
     </head>
     <body>
         
+        <!--Start of Log In Page-->
+        <div data-role="page" id="loginForm" data-theme="e">         
+            <header data-role="header">
+                 <h1>Log In</h1> 
+            </header>
 
+            <!--OLD FORM-->
+            <form id="form1" name="form1" method="GET" action="http://softwarehuttest.x10.mx/public/account/login/">
+                <label for="id">Username   </label>
+                <input type="text" name="id" id="id" />
+
+                <label for="password">Password   </label>
+                <input type="password" name="password" id="password" />
+                
+                <input type="hidden" name="rank" id="rank" value="1">
+
+                <input type="submit" name="submit" value="Login"/>    
+            </form>
+            
+            <footer data-role="footer" data-position="fixed">
+                <h1></h1>
+            </footer>
+        </div>
+        <!--End of Log In Page-->
+        
         <!--Start of Home Page-->
         <div data-role="page" id="home" data-theme="e">
             <header data-role="header">
