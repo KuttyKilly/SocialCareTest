@@ -187,7 +187,7 @@ $.getJSON("http://softwarehuttest.x10.mx/public/user/listunpaidbills/",function(
 
 
 //Budget
-$.getJSON("http://softwarehuttest.x10.mx/public/user/listunpaidbills/",function(data){
+$.getJSON("http://softwarehuttest.x10.mx/public/user/balance/",function(data){
             var wrap = $("<div/>").attr('data-role', 'collapsible');
             //Create the h1 and the other elements appending them to bills List
             $("<h1/>",{
